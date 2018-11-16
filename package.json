@@ -1,77 +1,64 @@
 {
-	"name": "ky",
-	"version": "0.5.1",
-	"description": "Tiny and elegant HTTP client based on the browser Fetch API",
-	"license": "MIT",
-	"repository": "sindresorhus/ky",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=8"
-	},
-	"scripts": {
-		"test": "xo && nyc ava && tsd-check && npm run cypress:run",
-		"cypress:open": "cypress open",
-		"cypress:run": "cypress run"
-	},
-	"files": [
-		"index.js",
-		"index.d.ts"
-	],
-	"keywords": [
-		"fetch",
-		"request",
-		"requests",
-		"http",
-		"https",
-		"fetching",
-		"get",
-		"url",
-		"curl",
-		"wget",
-		"net",
-		"network",
-		"ajax",
-		"api",
-		"rest",
-		"xhr",
-		"browser",
-		"got",
-		"axios",
-		"node-fetch"
-	],
-	"devDependencies": {
-		"@types/jquery": "^3.3.22",
-		"ava": "1.0.0-beta.8",
-		"body": "^5.1.0",
-		"codecov": "^3.0.4",
-		"create-test-server": "2.1.1",
-		"cypress": "^3.1.0",
-		"delay": "^4.0.0",
-		"esm": "^3.0.82",
-		"node-fetch": "^2.2.0",
-		"nyc": "^13.0.1",
-		"tsd-check": "^0.2.1",
-		"xo": "^0.23.0"
-	},
-	"xo": {
-		"envs": [
-			"browser",
-			"mocha"
-		],
-		"globals": [
-			"expect"
-		]
-	},
-	"ava": {
-		"babel": false,
-		"compileEnhancements": false,
-		"require": [
-			"esm",
-			"./test/_require"
-		]
-	}
+  "name": "ky",
+  "version": "0.5.1",
+  "description": "Tiny and elegant HTTP client based on the browser Fetch API",
+  "main": "index.js",
+  "browser": "ky.min.js",
+  "license": "MIT",
+  "repository": "kyleparisi/ky",
+  "author": {
+    "name": "Kyle parisi",
+    "email": "kyleparisi@gmail.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "build": "uglifyjs index.js > ky.min.js",
+    "test": "nyc ava && tsd-check"
+  },
+  "files": ["index.js", "index.d.ts"],
+  "keywords": [
+    "fetch",
+    "request",
+    "requests",
+    "http",
+    "https",
+    "fetching",
+    "get",
+    "url",
+    "curl",
+    "wget",
+    "net",
+    "network",
+    "ajax",
+    "api",
+    "rest",
+    "xhr",
+    "browser",
+    "got",
+    "axios",
+    "node-fetch"
+  ],
+  "devDependencies": {
+    "@types/jquery": "^3.3.22",
+    "ava": "1.0.0-beta.8",
+    "body": "^5.1.0",
+    "codecov": "^3.0.4",
+    "create-test-server": "2.1.1",
+    "delay": "^4.0.0",
+    "esm": "^3.0.82",
+    "node-fetch": "^2.2.0",
+    "nyc": "^13.0.1",
+    "tsd-check": "^0.2.1",
+    "uglifyjs": "^2.4.11"
+  },
+  "ava": {
+    "babel": false,
+    "compileEnhancements": false,
+    "require": ["esm", "./test/_require"]
+  },
+  "dependencies": {
+    "browserify": "^16.2.3"
+  }
 }

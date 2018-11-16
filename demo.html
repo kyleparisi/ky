@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="ky.min.js"></script>
+<script>
+  (async () => {
+    const json = await ky
+      .get("https://api.jsonbin.io/b/5bee30dd18a56238b6f725c7")
+      .json();
+
+    console.log(json);
+    //=> `{data: '🦄'}`
+  })();
+
+</script>
+</body>
+</html>
